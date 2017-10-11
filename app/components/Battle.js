@@ -8,7 +8,7 @@ function PlayerPreview (props) {
         <img
           className='avatar'
           src={props.avatar}
-          alt={'Avatar for ', props.username}
+          alt={'Avatar for ' + props.username}
         />
         <h2 className='username'>@{props.username}</h2>
       </div>
@@ -24,7 +24,7 @@ function PlayerPreview (props) {
 PlayerPreview.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  is: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   onReset: PropTypes.func.isRequired
 }
 
@@ -142,7 +142,7 @@ class Battle extends React.Component {
 
             {playerOneImage !== null &&
               <PlayerPreview
-                avater={playerOneImage}
+                avatar={playerOneImage}
                 username={playerOneName}
                 onReset={this.handleReset}
                 id='playerOne'
@@ -158,7 +158,7 @@ class Battle extends React.Component {
 
             {playerTwoImage !== null &&
               <PlayerPreview
-                avater={playerTwoImage}
+                avatar={playerTwoImage}
                 username={playerTwoName}
                 onReset={this.handleReset}
                 id='playerTwo'
